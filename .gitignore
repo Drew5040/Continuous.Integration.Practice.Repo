@@ -1,0 +1,19 @@
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+*.env
+
+# Ignore log files
+*.log
+
+# Ignore notebooks
+.ipynb_checkpoints/
+
+# Pycharm files
+.idea/
