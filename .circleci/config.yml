@@ -1,6 +1,6 @@
 ####### Python CircleCI 2.0 config file ########
 
-## > This first section is telling Circle CI which docker container to load up to run project in
+### > This first section is telling Circle CI which docker container to load up to run project in
 
 # Version: selects circle c.i. API
 version: 2
