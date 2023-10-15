@@ -1,0 +1,33 @@
+####### Python CircleCI 2.0 config file ########
+
+## > This first section is telling Circle CI which docker container to load up to run project in
+
+# Version: selects circle c.i. API
+version: 2
+# Jobs: can specify for what things to check. If only 1 job have to call it 'build'.
+# Job Ex: run program on multiple version of Python to check compatibility
+jobs:
+  build:
+    # Docker: tells circle c.i. to go to docker and load pre-installed container (circleci/python:3.11.0)
+    docker:
+      - image: circleci/python:3.7
+    # Working Directory: creates a temp directory on the build server to store all files
+    working_directory: ~/repo
+    # Steps:
+    steps:
+      # Step 1: obtain repo from GitHub
+      - checkout
+      # Step 2: create virtual env. and install dependencies
+      - run:
+          name: install dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+      # Step 3: run linter & tests
+      - run:
+          name: run tests
+          command: |
+            . venv/bin/activate
+            flake8 --exclude=venv* --statistics
+            pytest -v --cov=calculator
