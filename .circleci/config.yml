@@ -34,8 +34,14 @@ jobs:
           command: pip list
 
       - run:
+          name:
+          command: /home/circleci/repo/venv/bin/python3 -m pip install --upgrade pip
+
+      - run:
           name: Install Certifi
           command: pip install certifi
+
+
       # Step 3: run linter & tests
       - run:
           name: run tests
