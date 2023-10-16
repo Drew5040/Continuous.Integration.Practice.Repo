@@ -10,7 +10,7 @@ jobs:
   build:
     # Docker: tells circle c.i. to go to docker and load pre-installed container (circleci/python:3.11.0)
     docker:
-      - image: circleci/python:3.11.0
+      - image: circleci/python
     # Working Directory: creates a temp directory on the build server to store all files
     working_directory: /home/circleci/repo
     steps:
