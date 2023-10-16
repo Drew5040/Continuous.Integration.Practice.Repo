@@ -1,4 +1,4 @@
-## > Unit tests for the calculator library
+# Unit tests for the calculator library
 
 import calculator
 
